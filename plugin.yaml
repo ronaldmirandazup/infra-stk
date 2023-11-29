@@ -22,35 +22,22 @@ spec:
       - git-2
   repository: git@github.com:ronaldmirandazup/infra-stk.git
   technologies: # Ref: https://docs.stackspot.com/create-use/create-content/yaml-files/plugin-yaml/#technologies-1
-    - Api
+    - Terraform
+    - DevOps
   generates:
     connections:
       - type: aws-s3-conn
         alias: s3-infra-dev
         outputs:
-          - from: s3-infra-dev-arn
+          - from: infra_arn
             to: arn
-          - from: s3-infra-dev-bucket_name
+          - from: bucket_name
             to: bucket_name
   stk-projects-only: false
   inputs:
-  - label: Type name of your resource
-    name: resource
+  - label: Region
     type: text
-    required: true 
-    default: Client
-    pattern: '([A-Z][a-z]+)+'
-    help: 'Inform your resource name (e.g.: Client)'
-  - label: Choose http method of new endpoint
-    name: method
-    type: text
-    items:
-      - GET
-      - POST
-      - PUT
-      - DELETE
-      - PATCH
-    default: GET
+    name: region
+    help: Choose the name of the region.
+    default: us-east-1
     required: true
-    help: 'Inform the method of the endpoint (e.g.: post or delete)'
-  
