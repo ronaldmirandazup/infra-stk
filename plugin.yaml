@@ -4,7 +4,7 @@ metadata:
   name: infrastructure-test
   display-name: infrastructure-test
   description: teste-terraform
-  version: 0.0.1
+  version: 0.0.2
   picture: plugin.png
 spec:
   type: infra
@@ -40,4 +40,10 @@ spec:
     name: region
     help: Choose the name of the region.
     default: us-east-1
+    required: true
+  - label: Environment
+    type: text
+    name: environment
+    help: Choose the name of the environment.
+    default: development
     required: true
