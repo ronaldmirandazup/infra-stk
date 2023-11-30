@@ -1,0 +1,29 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: ronald-infra2
+  description: testes
+  stack-version-id: 01HGEN5051FT5X5TZB9ZGAW3MA
+  stack: infra-ronald@1.0.0
+spec:
+  type: infra
+  plugins:
+    - name: infrastructure-studio/infra-ronald@1.0.0/infrastructure-test@0.0.1
+      alias: infrastructure-test-1701304851682
+      plugin-version-id: 01HGEM3RZYC2ZHRC06KY8NJ1AB
+      stack-version-id: 01HGEN5051FT5X5TZB9ZGAW3MA
+      type: infra
+      inputs:
+        region: us-east-1
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-s3-conn
+            selected: teste
+            alias: s3-infra-dev
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: git@github.com:ronaldmirandazup/infra-stk.git
