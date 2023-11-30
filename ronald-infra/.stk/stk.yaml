@@ -1,25 +1,27 @@
 schema-version: v2
 kind: manifest
 metadata:
-  name: ronald-infra2
+  name: ronald-infra
   description: testes
-  stack-version-id: 01HGEN5051FT5X5TZB9ZGAW3MA
-  stack: infra-ronald@1.0.0
+  stack-version-id: 01HGET5TTM89P7GEVMWW3717CM
+  stack: infra-ronald@2.0.0
 spec:
   type: infra
+  infra-id: 01HGEP4EBEWDZRTN4Z3035NT4Y
   plugins:
-    - name: infrastructure-studio/infra-ronald@1.0.0/infrastructure-test@0.0.1
-      alias: infrastructure-test-1701304851682
-      plugin-version-id: 01HGEM3RZYC2ZHRC06KY8NJ1AB
-      stack-version-id: 01HGEN5051FT5X5TZB9ZGAW3MA
+    - name: infrastructure-studio/infra-ronald@2.0.0/infrastructure-test@0.0.2
+      alias: infrastructure-test-1701299426914
+      plugin-version-id: 01HGESVP987ZBAJKTVNP2CHSMW
+      stack-version-id: 01HGET5TTM89P7GEVMWW3717CM
       type: infra
       inputs:
         region: us-east-1
+        environment: development
       inputs-envs: {}
       connections:
         generates:
           - type: aws-s3-conn
-            selected: teste
+            selected: testes
             alias: s3-infra-dev
         requires: []
       links:
