@@ -9,7 +9,7 @@ spec:
   type: infra
   infra-id: 01HGEP4EBEWDZRTN4Z3035NT4Y
   plugins:
-    - name: infrastructure-studio/infra-ronald@2.0.0/infrastructure-test@0.0.2
+    - name: infrastructure-studio/infra-ronald@3.0.0/infrastructure-test@0.0.3
       alias: infrastructure-test-1701299426914
       plugin-version-id: 01HGESVP987ZBAJKTVNP2CHSMW
       stack-version-id: 01HGET5TTM89P7GEVMWW3717CM
@@ -19,10 +19,7 @@ spec:
         environment: development
       inputs-envs: {}
       connections:
-        generates:
-          - type: aws-s3-conn
-            selected: testes
-            alias: s3-infra-dev
+        generates: []
         requires: []
       links:
         generates: []
